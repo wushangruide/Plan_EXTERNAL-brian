@@ -1,10 +1,10 @@
 ---
 title: "AI 走向 — 我的判断"
 type: thinking
+domain: ai-research
 tags: [forecasting, capabilities, safety, geopolitics]
 created: 2026-04-09
 updated: 2026-04-09
-sources: 1
 ---
 
 # AI 走向 — 我的判断

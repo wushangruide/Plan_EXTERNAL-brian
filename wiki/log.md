@@ -12,6 +12,9 @@ Parse last N entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-08] note | Wiki initialized
 Created base directory structure, CLAUDE.md, index.md, log.md, overview.md. No sources ingested yet.
 
+## [2026-04-09] note | 多领域架构重组
+新增 wiki/papers/、wiki/domains/、wiki/queries/ 目录。更新 CLAUDE.md：加入 domain 字段、paper 专属格式、domains/ 工作流。更新 index.md 为类型+领域双轴视图。创建 wiki/domains/ai-research.md 领域入口页。
+
 ## [2026-04-09] note | 重组为 AI 研究知识库
 重写 CLAUDE.md（加入领域专属约定、标签体系、时效性规则、my-thinking 流程）。新增目录：wiki/people/、wiki/events/、wiki/my-thinking/。新增 timeline.md、people/daniel-kokotajlo.md、people/eli-lifland.md、people/thomas-larsen.md、my-thinking/ai-trajectory.md。更新 index.md 为新结构。
 
