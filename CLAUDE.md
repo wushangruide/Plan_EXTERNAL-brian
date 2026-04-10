@@ -25,6 +25,9 @@ wiki/
   concepts/           # 思想、框架、技术、术语
   events/             # 关键事件：模型发布、政策、事故
   my-thinking/        # 个人观点与思路演化（最重要的区域）
+  methods/            # 研究方法论（学术研究领域专用）
+  debates/            # 研究争议与对立主张（学术研究领域专用）
+  gaps/               # 研究真空 / 潜在论文 ideas（学术研究领域专用）
 ```
 
 ---
@@ -34,7 +37,7 @@ wiki/
 ```yaml
 ---
 title: "标题"
-type: paper | source | entity | person | concept | event | thinking | query | domain-hub
+type: paper | source | entity | person | concept | event | thinking | query | domain-hub | method | debate | gap
 domain: ai-research | [其他领域]   # 留空表示跨领域
 tags: []
 created: YYYY-MM-DD
@@ -54,6 +57,9 @@ updated: YYYY-MM-DD
 | `thinking` | `wiki/my-thinking/` | 个人观点与演化 |
 | `query` | `wiki/queries/` | 存档的分析与问答 |
 | `domain-hub` | `wiki/domains/` | 某个领域的汇总入口 |
+| `method` | `wiki/methods/` | 研究方法论（学术研究领域） |
+| `debate` | `wiki/debates/` | 研究争议与对立主张（学术研究领域） |
+| `gap` | `wiki/gaps/` | 研究真空 / 潜在论文 ideas（学术研究领域） |
 
 ---
 
@@ -228,6 +234,155 @@ updated: YYYY-MM-DD
 ## 推荐阅读顺序
 ```
 
+**学术研究类 domain-hub** 额外包含：
+
+```markdown
+## 核心研究方法（[[methods/xxx]]）
+## 活跃争议（[[debates/xxx]]）
+## 研究真空 / Ideas（[[gaps/xxx]]）
+```
+
+---
+
+### `method` — 研究方法论（学术研究领域）
+
+```markdown
+---
+title: "方法名称"
+type: method
+domain: xxx
+tags: []
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# 方法名称
+
+## 方法概述
+简要说明这是什么方法，解决什么问题。
+
+## 核心机制
+- 步骤/原理说明
+
+## 适用场景
+- 什么时候用这个方法
+- 适合什么类型的研究问题
+
+## 局限性
+- 方法本身的瓶颈
+- 常见误用
+
+## 代表性论文
+| Paper | 贡献 |
+|-------|------|
+| [[papers/xxx]] | 提出 / 改进 / 批评 |
+
+## 与其他方法的关系
+- 优于 / 劣于 / 互补于 [[methods/yyy]]
+
+## 开放问题
+> [!QUESTION]
+> 待解决的方法论问题
+```
+
+---
+
+### `debate` — 研究争议
+
+```markdown
+---
+title: "争议名称"
+type: debate
+domain: xxx
+tags: []
+status: active | resolved | stalled
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# 争议名称
+
+## 争议背景
+这个争议是什么，为什么重要。
+
+## 核心分歧
+一句话概括双方的根本分歧。
+
+## 立场 A：[简短标签]
+**核心主张**：
+**代表人物/论文**：
+**关键论据**：
+
+## 立场 B：[简短标签]
+**核心主张**：
+**代表人物/论文**：
+**关键论据**：
+
+## 立场 C（如有）
+...
+
+## 争议现状
+
+> [!AS-OF YYYY-MM]
+> 目前哪方占上风，是否有新证据？
+
+## 我的判断
+
+> [!MY-TAKE]
+> 个人倾向哪方，理由是什么。
+
+## 相关页面
+- [[papers/xxx]] — 支持立场 A
+- [[debates/yyy]] — 相关争议
+```
+
+---
+
+### `gap` — 研究真空 / 论文 Ideas
+
+```markdown
+---
+title: "研究空白名称"
+type: gap
+domain: xxx
+tags: []
+status: open | being-addressed | closed
+priority: high | medium | low
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# 研究空白名称
+
+## 空白描述
+目前这个问题/方向上缺少什么。
+
+## 为什么重要
+填补这个空白的意义是什么。
+
+## 现有工作的局限
+- 已有论文在哪里停住了
+- [[papers/xxx]] 做了 Y，但没有解决 Z
+
+## 潜在研究方向
+- 方向 1：具体思路
+- 方向 2：具体思路
+
+## 可能的方法论
+- 参考 [[methods/xxx]]
+
+## 相关争议
+- [[debates/xxx]] 中哪方获胜决定了这个 gap 是否真实存在
+
+## 已有尝试（如有）
+| Paper | 进展 | 局限 |
+|-------|------|------|
+| [[papers/xxx]] | ... | ... |
+
+## 状态更新（追加，不删除）
+- [YYYY-MM-DD] 发现这个空白，来源：xxx
+```
+
 ---
 
 ## Callouts（Obsidian 风格）
@@ -276,6 +431,58 @@ updated: YYYY-MM-DD
 
 ---
 
+## Domain Types（领域类型预设）
+
+每个 domain 在创建时选择一种预设类型，决定其子结构和工作流。
+
+---
+
+### 预设 A：AI Tracking（动态追踪型）
+
+适用场景：追踪快速迭代领域（AI 进展、行业动态、地缘政治）。
+
+**核心页面类型**：
+| 类型 | 目录 | 说明 |
+|------|------|------|
+| `source` | `wiki/sources/` | 文章、报告、情景文档 |
+| `entity` | `wiki/entities/` | 公司、模型、机构 |
+| `person` | `wiki/people/` | 关键人物 |
+| `concept` | `wiki/concepts/` | 核心概念与框架 |
+| `event` | `wiki/events/` | 发布、政策、事故 |
+
+**不使用**：`method`、`debate`、`gap`（这些适合深度学术领域）
+
+**Domain Hub 格式**：包含"关键来源 / 实体 / 人物 / 概念 / 事件 / 时间线 / 待追踪"
+
+**典型 domain**：`ai-research`（当前）
+
+---
+
+### 预设 B：Academic Research（学术研究型）
+
+适用场景：深入研究某一学术领域，追踪论文格局、方法论演化、研究争议，产生新 paper ideas。
+
+**核心页面类型**：
+| 类型 | 目录 | 说明 |
+|------|------|------|
+| `paper` | `wiki/papers/` | 学术论文（带方法/结果/局限） |
+| `method` | `wiki/methods/` | 研究方法论 |
+| `debate` | `wiki/debates/` | 活跃研究争议 |
+| `gap` | `wiki/gaps/` | 研究真空 / 论文 ideas |
+| `person` | `wiki/people/` | 研究者（含研究方向） |
+
+**Domain Hub 格式**：额外包含"核心方法 / 活跃争议 / 研究真空"三节
+
+**典型 domain**：（待建立，例如 `nlp-research`、`econ-theory`）
+
+---
+
+### 混合领域
+
+部分 domain 可能兼具两种特征（如"AI 安全"：既有快速动态，又有学术深度）。此时两套页面类型均可使用，domain hub 包含所有节。
+
+---
+
 ## 操作流程
 
 ### 判断内容类型
@@ -304,6 +511,25 @@ updated: YYYY-MM-DD
 6. 评估 my-thinking
 7. 更新 `wiki/index.md`
 8. 追加 `wiki/log.md`
+
+### Ingest 学术研究领域（Academic Research 预设）
+
+用于 domain type = Academic Research 的领域。ingest 一篇论文后：
+
+1. 读取源文件，创建 `wiki/papers/<slug>.md`（使用 paper 格式）
+2. 评估是否引入/改进/批评了某个**方法** → 更新或创建 `wiki/methods/<slug>.md`
+3. 评估是否加入了某个**争议** → 更新或创建 `wiki/debates/<slug>.md`
+4. 评估是否暴露了**研究空白** → 更新或创建 `wiki/gaps/<slug>.md`
+5. 更新作者 `wiki/people/<slug>.md`
+6. 更新 `wiki/domains/<domain>.md`（含方法/争议/gaps 节）
+7. 评估 `wiki/my-thinking/` 是否需要更新
+8. 更新 `wiki/index.md`
+9. 追加 `wiki/log.md`
+
+**Gap 优先级判断**：
+- 论文指出"future work"或"limitation" → 创建 gap，status: open
+- 争议未解决 + 缺乏实证 → 创建 gap
+- 方法论缺失（没有 X 领域的标准 benchmark）→ 创建 gap
 
 ### 回答 query
 1. 先读 `wiki/domains/<domain>.md` 或 `wiki/index.md` 定位相关页面
@@ -335,7 +561,7 @@ updated: YYYY-MM-DD
 # 主目录
 
 ## 按类型浏览
-### Papers | Sources | People | Entities | Concepts | Events | My Thinking | Queries
+### Papers | Sources | People | Entities | Concepts | Events | Methods | Debates | Gaps | My Thinking | Queries
 
 ## 按领域浏览
 ### AI Research
